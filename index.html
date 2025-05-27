@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Hajj Game - Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Admin Panel</h1>
+            <div class="stats">
+                <div class="stat">
+                    <span>Toplam Kullanıcı:</span>
+                    <span id="totalUsers">0</span>
+                </div>
+                <div class="stat">
+                    <span>Toplam Dua:</span>
+                    <span id="totalDua">0</span>
+                </div>
+                <div class="stat">
+                    <span>Toplam Altın:</span>
+                    <span id="totalCoins">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="tabs">
+                <button class="tab-button active" data-tab="users">👥 Kullanıcılar</button>
+                <button class="tab-button" data-tab="top-users">🏆 En İyi Kullanıcılar</button>
+                <button class="tab-button" data-tab="top-dua">🙏 En Çok Dua Edenler</button>
+            </div>
+
+            <div class="tab-content">
+                <div id="users" class="tab-pane active">
+                    <div class="search-bar">
+                        <input type="text" id="userSearch" placeholder="Kullanıcı ara...">
+                    </div>
+                    <div class="users-list">
+                        <!-- Kullanıcılar buraya gelecek -->
+                    </div>
+                </div>
+
+                <div id="top-users" class="tab-pane">
+                    <div class="top-list">
+                        <!-- En iyi kullanıcılar buraya gelecek -->
+                    </div>
+                </div>
+
+                <div id="top-dua" class="tab-pane">
+                    <div class="top-list">
+                        <!-- En çok dua edenler buraya gelecek -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kullanıcı Detay Modalı -->
+        <div id="userModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Kullanıcı Detayları</h2>
+                <div class="user-details">
+                    <div class="detail-group">
+                        <label>Kullanıcı Adı:</label>
+                        <span id="modalUsername"></span>
+                    </div>
+                    <div class="detail-group">
+                        <label>Seviye:</label>
+                        <input type="number" id="modalLevel">
+                    </div>
+                    <div class="detail-group">
+                        <label>Altın:</label>
+                        <input type="number" id="modalCoins">
+                    </div>
+                    <div class="detail-group">
+                        <label>Dua Gücü:</label>
+                        <input type="number" id="modalDuaPower">
+                    </div>
+                    <div class="detail-group">
+                        <label>Otomatik Dua Gücü:</label>
+                        <input type="number" id="modalAutoDuaPower">
+                    </div>
+                    <div class="detail-group">
+                        <label>Toplam Dua:</label>
+                        <span id="modalTotalDua"></span>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button id="saveUser">Kaydet</button>
+                    <button id="deleteUser" class="danger">Kullanıcıyı Sil</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html> 
